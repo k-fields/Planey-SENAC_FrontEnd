@@ -8,6 +8,9 @@ export const TransactionPage = () => {
     const [ name, setName ] = useState('');
     const [ amount, setAmount ] = useState('');
 
+    const monthNames = ["Jan.", "Fev.", "Mar.", "Abr.", "Maio", "Jun.",
+    "Jul.", "Ago.", "Set.", "Out.", "Nov.", "Dez."];
+
     useEffect(() => {
         const items = JSON.parse(localStorage.getItem('transactions'));
         if (items) {
@@ -32,9 +35,9 @@ export const TransactionPage = () => {
 
     const handleClick =() => {
         var today = new Date();
-        let seconds = today.getSeconds();
-        seconds = seconds <= 9 ? '0' + seconds : seconds;
-        var crrdate = today.getHours() + ":" + today.getMinutes() + ":" + seconds;
+        let minute = today.getMinutes();
+        minute = minute <= 9 ? '0' + minute : minute;
+        var crrdate = today.getDay() + " " + monthNames[today.getMonth()]  + " " + today.getFullYear() + " - " + today.getHours() + ":" + minute;
 
         setTransactions([...transactions, {id: transactions.length + 1, name: name, amount: Number(amount), date: crrdate}]);
     }
