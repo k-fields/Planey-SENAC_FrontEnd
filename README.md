@@ -1,3 +1,6 @@
+### Verificar instalações e visualização
+ - Mais informações no arquivo PI_Grupo4-Especificações_SegundaEntrega.docx
+
 # Descritivo de  Instalações
  -  `Nodejs`
  -  `Visual Studio Code`
@@ -27,6 +30,7 @@
   \`email\` VARCHAR(45) NOT NULL,
   \`password\` VARCHAR(200) NOT NULL,
   PRIMARY KEY (\`idusuarios\`)); `
+  
  
 ### Integrantes do Grupo
 
